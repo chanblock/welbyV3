@@ -101,7 +101,7 @@ const WeeklyPlanningModalForm = ({
             <Modal.Body>
                 <Form onSubmit={handleSubmitWeeklyPlanning}>
                     <Form.Group controlId="date">
-                        <Form.Label>Date</Form.Label>
+                        <Form.Label>Date &nbsp;&nbsp; </Form.Label>
                         <DatePicker
                             className="form-control"
                             selected={date}
@@ -123,11 +123,12 @@ const WeeklyPlanningModalForm = ({
                         <Form.Label>Goals</Form.Label>
                         <Form.Control
                             as="textarea"
-                            className="custom-textarea-long"
                             value={descriptionPlanning}
                             placeholder="Example: Carry out activities in the outdoor area that allow children to enjoy Easter time"
                             onChange={(e) => setDescriptionPlanning(e.target.value)}
                             required
+                            rows={4}
+                            style={{ minHeight: '150px', resize: 'vertical' }}
                         />
                     </Form.Group>
                     <br></br>

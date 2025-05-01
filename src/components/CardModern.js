@@ -41,7 +41,7 @@ const CardModern = ({
                 <div className="footer-card">
                     <button className={`buttonCard3`} onClick={handleShowGoal}><span>Create </span></button>
                     <button className={`buttonCard3 `} onClick={() => handleHistoricalReportSubmission('goal_report')}><span>Historical</span></button>
-                    <button className={`buttonCard3 ${!fullAccess ? "link-disabled" : ""}`} onClick={() => handleShowTutorial("https://www.youtube.com/embed/vBXdNYX_mJ8?si=n_qAFdWSryGlJyB4")} variant="info"><span>Tutorial </span></button>
+                    <button className={`buttonCard3 `} onClick={() => handleShowTutorial("https://www.youtube.com/embed/vBXdNYX_mJ8?si=n_qAFdWSryGlJyB4")} variant="info"><span>Tutorial </span></button>
                 </div>
             </div>
 
@@ -54,7 +54,7 @@ const CardModern = ({
                 </div>
                 <div className="footer-card">
                     <Link to="/chat">
-                        <button className={`buttonCard3 ${!fullAccess ? "link-disabled" : ""}`} ><span>Ask me anything (Chat)</span></button>
+                        <button className={`buttonCard3 `} ><span>Ask me anything (Chat)</span></button>
                     </Link>
                 </div>
             </div>
@@ -71,7 +71,7 @@ const CardModern = ({
                 <div className="footer-card">
                     <button className={`buttonCard2 `} onClick={handleShowObservations} ><span>Create </span></button>
                     <button className={`buttonCard2 `} onClick={() => handleHistoricalReportSubmission('descriptions_report')}><span>Historical</span></button>
-                    <button className={`buttonCard2 ${!fullAccess ? "link-disabled" : ""}`} onClick={() => handleShowTutorial("https://www.youtube.com/embed/Ws2e4MohNzE?si=rfaMffp628OLDuv1")} variant="info"><span>Tutorial </span></button>
+                    <button className={`buttonCard2 `} onClick={() => handleShowTutorial("https://www.youtube.com/embed/Ws2e4MohNzE?si=rfaMffp628OLDuv1")} variant="info"><span>Tutorial </span></button>
                 </div>
             </div>
 
@@ -87,7 +87,7 @@ const CardModern = ({
                 <div className="footer-card">
                     <button className={`buttonCard2 `} onClick={handleShowFollowUp}><span>Create </span></button>
                     <button className={`buttonCard2`} onClick={() => handleHistoricalReportSubmission('follow_up')}><span>Historical</span></button>
-                    <button className={`buttonCard2 ${!fullAccess ? "link-disabled" : ""}`} onClick={() => handleShowTutorial("https://www.youtube.com/embed/o_0ADz4yP28?si=y6IYQRhxs8-kKsv6")} variant="info"><span>Tutorial </span></button>
+                    <button className={`buttonCard2 `} onClick={() => handleShowTutorial("https://www.youtube.com/embed/o_0ADz4yP28?si=y6IYQRhxs8-kKsv6")} variant="info"><span>Tutorial </span></button>
                 </div>
             </div>
 
@@ -99,8 +99,8 @@ const CardModern = ({
                 </div>
                 <div className="footer-card">
                     <button className={`buttonCard2 `} onClick={handleShowSummativeAssessment}><span>Create </span></button>
-                    <button className={`buttonCard2 ${!fullAccess ? "link-disabled" : ""}`} onClick={() => handleHistoricalReportSubmission('summative_assessment')}><span>Historical</span></button>
-                    <button className={`buttonCard2 ${!fullAccess ? "link-disabled" : ""}`} onClick={() => handleShowTutorial("https://www.youtube.com/embed/FofvjvST65I?si=Y89Oz6CFQuXX3Wy7")}><span>Tutorial </span></button>
+                    <button className={`buttonCard2 `} onClick={() => handleHistoricalReportSubmission('summative_assessment')}><span>Historical</span></button>
+                    <button className={`buttonCard2 `} onClick={() => handleShowTutorial("https://www.youtube.com/embed/FofvjvST65I?si=Y89Oz6CFQuXX3Wy7")}><span>Tutorial </span></button>
                 </div>
             </div>
 
@@ -142,7 +142,7 @@ const CardModern = ({
                 <div className="footer-card">
                     <button className={`buttonCard `} onClick={handleShowFormWeeklyPlanning}><span>Create </span></button>
                     <button className={`buttonCard`} onClick={() => handleHistoricalReportSubmission('weeklyn_planning')}><span>Historical</span></button>
-                    <button className={`buttonCard ${!fullAccess ? "link-disabled" : ""}`} onClick={() => handleShowTutorial("https://www.youtube.com/embed/-dkItdfDZho?si=ji4wWK_wdGzMmCK5")} variant="info"><span>Tutorial </span></button>
+                    <button className={`buttonCard `} onClick={() => handleShowTutorial("https://www.youtube.com/embed/-dkItdfDZho?si=ji4wWK_wdGzMmCK5")} variant="info"><span>Tutorial </span></button>
                 </div>
             </div>
         </div>

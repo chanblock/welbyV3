@@ -170,7 +170,6 @@ const FollowUpModalForm = ({
 
                     <Form.Group controlId="name">
                         <Form.Label>Name</Form.Label>
-                        {console.log('Lista de niños:', childs)}
                         <Form.Control
                             as="select"
                             value={selectedChild ? selectedChild._id : ""}
@@ -219,11 +218,12 @@ const FollowUpModalForm = ({
                         <Form.Label>Goals</Form.Label>
                         <Form.Control
                             as="textarea"
-                            className="custom-textarea-small"
                             placeholder="Example: To assist Jasper in developing his fine motor skills"
                             value={goalFollowUp}
                             onChange={(e) => setGoalFollowUp(e.target.value)}
                             required
+                            rows={4}
+                            style={{ minHeight: '100px', resize: 'vertical' }}
                         />
                     </Form.Group>
 
@@ -231,11 +231,12 @@ const FollowUpModalForm = ({
                         <Form.Label>Descriptions</Form.Label>
                         <Form.Control
                             as="textarea"
-                            className="custom-textarea-long"
                             placeholder="Example: Jasper was drawn to the paper-cutting-with-scissors activity. He sat in the chair and very attentively waited for the teacher's instructions to start developing the activity. Jasper enjoyed cutting the paper into small pieces. Jasper successfully completed the activity showing that his fine motor skills have greatly improved."
                             value={descriptionsFollowUp}
                             onChange={(e) => setDescriptionsFollowUp(e.target.value)}
                             required
+                            rows={4}
+                            style={{ minHeight: '180px', resize: 'vertical' }}
                         />
                     </Form.Group>
                     <br />

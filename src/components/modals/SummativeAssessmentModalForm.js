@@ -159,7 +159,7 @@ const SummativeAssessmentModalForm = ({
                 />
                 <Form onSubmit={handleSubmitSummativeAssessment}>
                     <Form.Group controlId="date">
-                        <Form.Label>Date</Form.Label>
+                        <Form.Label>Date &nbsp;&nbsp; </Form.Label>
                         <DatePicker
                             className="form-control"
                             selected={date}
@@ -209,11 +209,12 @@ const SummativeAssessmentModalForm = ({
                         <Form.Label>Outcome1 Children have a strong sense of identity:</Form.Label>
                         <Form.Control
                             as="textarea"
-                            className="custom-textarea-size"
                             placeholder="Example: Children have a strong sense of identity: they prefer to play and be alone, they look for their teachers when they are afraid, they participate in reading groups, they know what they want, they are whimsical"
                             value={outCome1}
                             onChange={(e) => setOutCome1(e.target.value)}
                             required
+                            rows={4}
+                            style={{ minHeight: '120px', resize: 'vertical' }}
                         />
                     </Form.Group>
 
@@ -221,11 +222,12 @@ const SummativeAssessmentModalForm = ({
                         <Form.Label>Outcome2 Children are connected with and contribute to their world:</Form.Label>
                         <Form.Control
                             as="textarea"
-                            className="custom-textarea-size"
                             placeholder="Example: Children are connected with and contribute to their world: he is kind, he is not aggressive, he respects others"
                             value={outCome2}
                             onChange={(e) => setOutCome2(e.target.value)}
                             required
+                            rows={4}
+                            style={{ minHeight: '100px', resize: 'vertical' }}
                         />
                     </Form.Group>
 
@@ -233,11 +235,12 @@ const SummativeAssessmentModalForm = ({
                         <Form.Label>Outcome3 Children have a strong sense of wellbeing:</Form.Label>
                         <Form.Control
                             as="textarea"
-                            className="custom-textarea-size"
                             placeholder="Example: Children have a strong sense of wellbeing: they do not like to wear the hat or the suncream when they go out, it is difficult to start the toilet training process because they refuse to sit down despite the fact that the educators create different strategies"
                             value={outCome3}
                             onChange={(e) => setOutCome3(e.target.value)}
                             required
+                            rows={4}
+                            style={{ minHeight: '140px', resize: 'vertical' }}
                         />
                     </Form.Group>
 
@@ -245,11 +248,12 @@ const SummativeAssessmentModalForm = ({
                         <Form.Label>Outcome4 Children are confident and involved learners:</Form.Label>
                         <Form.Control
                             as="textarea"
-                            className="custom-textarea-size"
                             placeholder="Example: Children are confident and involved learners: chooses what they want to learn, answers correctly when they feel confident, during art and craft activities is drawn to activities where markers are used, likes reading sections and looks for books to look at"
                             value={outCome4}
                             onChange={(e) => setOutCome4(e.target.value)}
                             required
+                            rows={4}
+                            style={{ minHeight: '140px', resize: 'vertical' }}
                         />
                     </Form.Group>
 
@@ -257,11 +261,12 @@ const SummativeAssessmentModalForm = ({
                         <Form.Label>Outcome5 Children are effective communicators:</Form.Label>
                         <Form.Control
                             as="textarea"
-                            className="custom-textarea-size"
                             placeholder="Example: Children are effective communicators: he is shy when talking to other friends or teachers despite having good verbal skills, he prefers non-verbal communication"
                             value={outCome5}
                             onChange={(e) => setOutCome5(e.target.value)}
                             required
+                            rows={4}
+                            style={{ minHeight: '140px', resize: 'vertical' }}
                         />
                     </Form.Group>
 

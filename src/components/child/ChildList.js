@@ -62,7 +62,6 @@ function ChildList() {
             setIsLoading(true);  // Comienza mostrando el estado de carga
             try {
                 const data = await getListChilds(token);
-                console.log("Lista de niños actualizada:", data.data);
                 setChilds(data.data);
             } catch (error) {
                 console.error('Error fetching childs:', error);
@@ -220,7 +219,6 @@ function ChildList() {
                 age--;
             }
             
-            console.log('Fecha de nacimiento:', birthDate, 'Edad calculada:', age);
             return age;
         } catch (error) {
             console.error('Error calculating age:', error);
@@ -330,12 +328,7 @@ function ChildList() {
                 ) : (
 
                     childs.map((child) => {
-                        console.log('Datos del niño:', {
-                            nombre: child.child_name,
-                            birth_date: child.birth_date,
-                            age: child.age,
-                            edadCalculada: child.birth_date ? calculateAge(child.birth_date) : null
-                        });
+                       
                         return (
                             <tr key={child._id}>
                                 <td>{child.child_name}</td>
@@ -343,7 +336,6 @@ function ChildList() {
                                     {child.birth_date ? 
                                         (() => {
                                             const calculatedAge = calculateAge(child.birth_date);
-                                            console.log('Edad final mostrada:', calculatedAge !== null ? calculatedAge : child.age);
                                             return calculatedAge !== null ? calculatedAge : child.age;
                                         })() 
                                         : child.age

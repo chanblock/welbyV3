@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Modal, Form, Button, Alert, Spinner } from 'react-bootstrap';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import { submitDailyReport } from '../../api/report';
+import { submitDailyReport, fetchLastDocumentData } from '../../api/report';
 
 const DailyJournalModal = ({ 
     show, 
@@ -10,7 +10,7 @@ const DailyJournalModal = ({
     submitting, 
     setSubmitting,
     submittingPreviousVariables,
-    handlePreviousVariablesDailyReport,
+    setSubmittingPreviousVariables,
     alertVisible,
     alertMessage,
     alertType,
@@ -65,6 +65,22 @@ const DailyJournalModal = ({
         setActivities('');
     };
 
+    const handlePreviousVariablesDailyReport = async () => {
+        setSubmittingPreviousVariables(true);
+
+        const token = localStorage.getItem('token');
+        const lastVariable = await fetchLastDocumentData(token, "daily_report");
+        const variables = lastVariable?.get_variables?.variables;
+        if (variables) {
+            setSubmittingPreviousVariables(false);
+            setActivities(variables.activities);
+            setRangeAgeDailyReport(variables.range_age);
+        } else {
+            setSubmittingPreviousVariables(false);
+            showAlert("not variables found.");
+        }
+    }
+
     return (
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
@@ -78,7 +94,7 @@ const DailyJournalModal = ({
             <Modal.Body>
                 <Form onSubmit={onSubmit}>
                     <Form.Group controlId="date">
-                        <Form.Label>Date</Form.Label>
+                        <Form.Label>Date &nbsp;&nbsp; </Form.Label>
                         <DatePicker
                             className="form-control"
                             selected={date}
@@ -105,6 +121,8 @@ const DailyJournalModal = ({
                             value={activities}
                             onChange={(e) => setActivities(e.target.value)}
                             required
+                            rows={4}
+                            style={{ minHeight: '120px' }}
                         />
                     </Form.Group>
                     <br />

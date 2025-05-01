@@ -4,6 +4,7 @@
   "homepage": "https://welby.com.au",
   "private": true,
   "dependencies": {
+    "dotenv": "^16.5.0",
     "@amcharts/amcharts4": "^4.10.38",
     "@amcharts/editor4": "^4.0.3",
     "@stripe/react-stripe-js": "^2.1.1",

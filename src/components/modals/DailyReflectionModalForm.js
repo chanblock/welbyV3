@@ -94,7 +94,7 @@ const DailyReflectionModalForm = ({
             <Modal.Body>
                 <Form onSubmit={handleSubmitCriticalReflection}>
                     <Form.Group controlId="date">
-                        <Form.Label>Date</Form.Label>
+                        <Form.Label>Date &nbsp;&nbsp; </Form.Label>
                         <DatePicker
                             className="form-control"
                             selected={date}
@@ -106,11 +106,12 @@ const DailyReflectionModalForm = ({
                         <Form.Label>Describe daily reflection</Form.Label>
                         <Form.Control
                             as="textarea"
-                            className="custom-textarea-long"
                             value={description}
                             placeholder="Example: Children were engaged during the group time by choosing the letter they wanted to learn during the week. Children enjoyed singing five little monkeys swinging on the tree. Children enjoyed developing arts and crafts about letters and they remember easily what word start whit the letter, in this case P for piggy.Some parents are worried about their child emotional manage because they mention they do not know how to manage it, because the children do not have self-regulation. Many children need to improve their help-self skills"
                             onChange={(e) => setDescription(e.target.value)}
                             required
+                            rows={4}
+                            style={{ minHeight: '260px', resize: 'vertical' }}
                         />
                     </Form.Group>
                     <br></br>

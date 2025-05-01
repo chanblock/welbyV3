@@ -5,7 +5,7 @@ import "../styles/Home.css";
 import "../styles/Auth.css";
 import { Button, Modal} from "react-bootstrap";
 import 'react-datepicker/dist/react-datepicker.css';
-import {  submitHistoricalReport, submitWeeklyPlanning, submitWeeklyReflection, submitGetVariablesReports, submitFollowUp, fetchLastDocumentData } from '../api/report';
+import {  submitHistoricalReport,  submitGetVariablesReports } from '../api/report';
 import { UpdateFieldUser, getUser } from "../api/user";
 import { UpdateAllChildren, getListChilds, addNewChild } from "../api/childs";
 import { checkSubscription } from "../api/payment";
@@ -97,8 +97,8 @@ const Home = () => {
     // const daily report
     const [show, setShow] = useState(false);
     const [submitting, setSubmitting] = useState(false);
-    const [activities, setActivities] = useState("");
-    const [rangeAgeDailyReport, setRangeAgeDailyReport] = useState('');
+   // const [activities, setActivities] = useState("");
+    //const [rangeAgeDailyReport, setRangeAgeDailyReport] = useState('');
     const handleClose = () => setShow(false);
     const handleShow = async () => setShow(true);
     const [isOpenModal, setIsOpenModal] = useState(false);
@@ -239,28 +239,11 @@ const Home = () => {
             showAlert("Child added successfully, you can select the child.", "success");
             const data = await getListChilds(token);
             setChilds(data.data);
-
-
         }
 
         setIsSubmittingChild(false);
     }
 
-
-    const handlePreviousVariablesDailyReport = async () => {
-        setSubmittingPreviousVariables(true);
-
-        const token = localStorage.getItem('token');
-        const lastVariable = await fetchLastDocumentData(token, "daily_report");
-        const variables = lastVariable?.get_variables?.variables;
-        if (variables) {
-            setSubmittingPreviousVariables(false);
-            setActivities(lastVariable.get_variables.variables.activities)
-        } else {
-            setSubmittingPreviousVariables(false);
-            showAlert("not variables found.");
-        }
-    }
 
     const handleHistoricalReportSubmission = async (typeReport) => {
         setSubmitting(true);
@@ -271,7 +254,6 @@ const Home = () => {
             const data = await submitHistoricalReport(token, typeReport);
             // Filtrar los reportes con el mismo 'typeReport'
             const filteredReports = data.list_report.filter(report => report.type_report === typeReport);
-            console.log("filteredReports", filteredReports);
             // Establecer los reportes en el contexto
             setReports(filteredReports);
             // Redirigir a la vista de reportes y pasar la data como estado de ubicación      
@@ -338,7 +320,7 @@ const Home = () => {
                 submitting={submitting}
                 setSubmitting={setSubmitting}
                 submittingPreviousVariables={submittingPreviousVariables}
-                handlePreviousVariablesDailyReport={handlePreviousVariablesDailyReport}
+                setSubmittingPreviousVariables={setSubmittingPreviousVariables}
                 alertVisible={alertVisible}
                 alertMessage={alertMessage}
                 alertType={alertType}

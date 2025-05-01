@@ -130,7 +130,7 @@ const GoalModalForm = ({
                 />
                 <Form onSubmit={handleSubmitGoal}>
                     <Form.Group controlId="date">
-                        <Form.Label>Date</Form.Label>
+                        <Form.Label>Date&nbsp;&nbsp;</Form.Label>
                         <DatePicker
                             className="form-control"
                             selected={date}
@@ -179,11 +179,12 @@ const GoalModalForm = ({
                         <Form.Label>Goals</Form.Label>
                         <Form.Control
                             as="textarea"
-                            className="custom-textarea-long"
                             placeholder="Example: Improve verbal communication using her words to express feelings and her needs"
                             value={goals}
                             onChange={(e) => setGoals(e.target.value)}
                             required
+                            rows={4}
+                            style={{ minHeight: '120px', resize: 'vertical' }}
                         />
                     </Form.Group>
                     <br />

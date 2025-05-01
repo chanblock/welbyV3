@@ -185,11 +185,12 @@ const ObservationsModalForm = ({
                         <Form.Label>Goal Observations</Form.Label>
                         <Form.Control
                             as="textarea"
-                            className="custom-textarea-long"
                             placeholder="Example: Improve verbal communication using her words to express feelings and her needs"
                             value={goalObservations}
                             onChange={(e) => setGoalObservations(e.target.value)}
                             required
+                            rows={4}
+                            style={{ minHeight: '120px', resize: 'vertical' }}
                         />
                     </Form.Group>
 
@@ -197,11 +198,12 @@ const ObservationsModalForm = ({
                         <Form.Label>Descriptions</Form.Label>
                         <Form.Control
                             as="textarea"
-                            className="custom-textarea-long"
                             placeholder="Example: During group time, she was able to express her feelings when another child took her toy..."
                             value={descriptions}
                             onChange={(e) => setDescriptions(e.target.value)}
                             required
+                            rows={4}
+                            style={{ minHeight: '120px', resize: 'vertical' }}
                         />
                     </Form.Group>
                     <br />

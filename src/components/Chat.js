@@ -88,7 +88,7 @@ const Chat = () => {
         </div>
         <form className="chat-input" onSubmit={sendMessageImg}>
         <span className="chat-input-span">
-        <input
+        {/*<input
               type="file"
               accept="image/*"
               onChange={(e) => {
@@ -96,7 +96,7 @@ const Chat = () => {
                 console.log("Imagen cargada:", e.target.files[0]);
             }} // Actualiza el estado de la imagen
             
-          />
+          />*/}
             <input
                 type="text"
                 placeholder="Type your message..."
